@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162C4E;
+    width: 100%;
+
+    @media(max-width: 767px) {
+        display: grid;
+    }
+}
+
+.EnterEmailWrapper {
+    position: relative;
+}
+
+.Input {
+    height: 2.5rem;
+    padding: 0px 20px;
+    min-width: 17rem;
+    border-radius: 50px;
+    outline: #162C4E;
+}
+
+.Button {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    background: red;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    z-index: 2;
+
+    &:hover {
+        background: rgb(101, 101, 101);
+        transition: 0.5s;
+    }
+}
+
+.OtherEventsWrapper {
+    position: absolute;
+    right: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    @media(max-width: 767px) {
+        position: static;
+
+    }
+}
