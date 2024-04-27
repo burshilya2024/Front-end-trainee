@@ -4,9 +4,15 @@
     align-items: center;
     background: #162C4E;
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    padding: 15px;
 
     @media(max-width: 767px) {
         display: grid;
+        position: static;
+        padding: 0;
     }
 }
 

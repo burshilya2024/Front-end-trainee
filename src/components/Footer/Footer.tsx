@@ -1,22 +1,58 @@
+'use client'
 import styles from "./footer.module.css";
 import Image from 'next/image';
+import arrow from 'public/arrow.svg'; // Исправлен путь к файлам SVG
+import arrowDown from 'public/arrow-down.svg'; // Исправлен путь к файлам SVG
+import { useState } from "react";
+import { Popup } from "../Popop/Popup";
+import { z } from 'zod';
 
-import arrow from 'public/arrow.svg'
-import arrowDown from 'public/arrow-down.svg'
+const emailSchema = z.string().email('Неверный формат email').min(3, 'Поле должно быть заполнено');
+
 const Footer = () => {
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            emailSchema.parse(email);
+            setEmailError('');
+        } catch (error: any) {
+            setEmailError(error.errors[0].message);
+        }
+        setShowPopup(true);
+    };
+
     return (
         <div className={styles.container}>
-
-            <div className={styles.EnterEmailWrapper}>
-                <input className={styles.Input} type="text" placeholder="Enter your Email and get notified" />
-                <button className={styles.Button}><Image src={arrow} alt="" /></button>
-            </div>
-            <a href="#otherEvents" className={styles.OtherEventsWrapper}>
+            <form onSubmit={handleSubmit} className={styles.EnterEmailWrapper}>
+                <input
+                    className={styles.Input}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Enter your Email and get notified"
+                />
+                <button type="submit" className={styles.Button}>
+                    <Image src={arrow} alt="" />
+                </button>
+            </form>
+            {/* <a href="#otherEvents" className={styles.OtherEventsWrapper}>
                 <p> other events </p>
                 <Image className={styles.ArrowDown} src={arrowDown} alt="" />
-            </a>
-
-        </div>
+            </a> */}
+            {showPopup && (
+                <Popup
+                    message={emailError}
+                    onClose={() => setShowPopup(false)}
+                />
+            )}
+        </div >
     );
 };
 

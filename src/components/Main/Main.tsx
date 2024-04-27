@@ -5,7 +5,7 @@ import timeIcon from 'public/time-red.svg'
 import timeIconDesctop from 'public/time-red-desctop.svg'
 import arrowIcon from 'public/arrow.svg'
 import { useEffect, useState } from "react";
-import { calculateTimeLeft, formatTimeUnit } from './calculateTimeLeft';
+import { calculateTimeLeft, formatTimeUnit } from './helpers/calculateTimeLeft';
 import dynamic from 'next/dynamic'
 import useIsMobile from "./helpers/IsMobileHook";
 
@@ -35,6 +35,10 @@ const Main = () => {
         { label: isMobile ? 'MM' : 'Minutes', icon: isMobile ? timeIcon : timeIconDesctop },
         { label: isMobile ? 'SS' : 'Seconds', icon: isMobile ? timeIcon : timeIconDesctop }
     ];
+
+
+
+
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>UNDER {isMobile ? <br /> : null} CONSCTURCION</h1>
@@ -62,12 +66,15 @@ const Main = () => {
             </div>
             <div className={styles.checkButton}>
                 <h3>Check our event page when you wait:</h3>
-                <button className={styles.Button}>Go to the event <Image src={arrowIcon} alt={''} /> </button>
+                <a href="https://www.google.com">
+                    <button className={styles.Button}>Go to the event <Image src={arrowIcon} alt={''} /> </button>
+                </a>
             </div>
+
         </div>
     );
 };
 
 export default Main
 // !решает проблему гидрации в next.js
-// export default dynavmic(() => Promise.resolve(Main), { ssr: false })
+// export default dynamic(() => Promise.resolve(Main), { ssr: false })

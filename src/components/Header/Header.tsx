@@ -10,7 +10,9 @@ const Header = () => {
             <div> <Image src={left} alt={''} className={styles.leftImage} /></div>
             <div> <Image src={right} alt={''} className={styles.rightImage} /></div>
             <div className={styles.headerContent}>
-                <Image src={HeaderIcon} alt={''} className={styles.headerIcon} />
+                <a href="/">
+                    <Image src={HeaderIcon} alt={''} className={styles.headerIcon} />
+                </a>
                 <div className={styles.headerText}>
                     <h1 className={styles.headerTitle}>LEAD</h1>
                     <p className={styles.headerSubtitle}>ADVISORS</p>

@@ -13,7 +13,7 @@ export default function Home() {
         <Main />
         <Footer />
       </div>
-      <AllEvents />
+      {/* <AllEvents /> */}
     </main>
   );
 }
