@@ -1,12 +1,29 @@
 .container {
-
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     font-size: 33px;
-    padding: 0 5%;
+    padding: 0% 0% 20% 0%;
     text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+@keyframes TranSlateYanimate50 {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.container h1 {}
+
+.animatedPage {
+    animation: TranSlateYanimate50 1.5s ease-in-out;
 }

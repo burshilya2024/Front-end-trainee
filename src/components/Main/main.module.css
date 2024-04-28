@@ -1,3 +1,29 @@
+/*!headerAnimate*/
+@keyframes TranSlateYanimate {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes TranSlateYanimate50 {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -9,6 +35,7 @@
 
 .title {
     color: #838fa4;
+    animation: TranSlateYanimate 1.4s ease-in-out;
 }
 
 .text {
@@ -17,12 +44,14 @@
     font-size: 16px;
     font-family: Courier, monospace;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: TranSlateYanimate50 1s ease-in-out;
 }
 
 .timeWrapper {
     padding-top: 50px;
     font-size: 48px;
     font-weight: 700;
+    animation: TranSlateYanimate50 1s ease-in-out;
 
     .time {
         font-size: 6rem;
@@ -52,11 +81,26 @@
 .dateWrapper {
     display: flex;
     gap: 28px;
+    animation: TranSlateYanimate 1s ease-in-out;
+}
 
+
+
+@keyframes TranSlateYanimateDate {
+    0% {
+        opacity: 0;
+        transform: translateY(350%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
 }
 
 .date {
     position: relative;
+    animation: TranSlateYanimateDate 1s ease-in-out;
 }
 
 .date p {
@@ -74,8 +118,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-
+    animation: TranSlateYanimateDate 1s ease-in-out;
 
     .Button {
         display: flex;

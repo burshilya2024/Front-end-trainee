@@ -75,6 +75,6 @@ const Main = () => {
     );
 };
 
-export default Main
+// export default Main
 // !решает проблему гидрации в next.js
-// export default dynamic(() => Promise.resolve(Main), { ssr: false })
+export default dynamic(() => Promise.resolve(Main), { ssr: false })

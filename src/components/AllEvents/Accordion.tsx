@@ -23,6 +23,7 @@ export const Accordion = ({ faqList }: AccordionProps) => {
                         faqItem={faqItem}
                         isOpen={id === openId}
                         key={id}
+                        id={id}
                     />
                 );
             })}

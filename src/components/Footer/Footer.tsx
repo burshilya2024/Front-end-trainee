@@ -29,6 +29,15 @@ const Footer = () => {
         setShowPopup(true);
     };
 
+    const handleScroll = () => {
+        window.scrollTo({
+            top: window.scrollY + window.innerHeight, // Прокрутка на высоту окна просмотра
+            behavior: 'smooth' // Плавная прокрутка
+        });
+    };
+
+
+
     return (
         <div className={styles.container}>
             <form onSubmit={handleSubmit} className={styles.EnterEmailWrapper}>
@@ -42,10 +51,10 @@ const Footer = () => {
                     <Image src={arrow} alt="" />
                 </button>
             </form>
-            {/* <a href="#otherEvents" className={styles.OtherEventsWrapper}>
+            <div className={styles.OtherEventsWrapper} onClick={handleScroll}>
                 <p> other events </p>
                 <Image className={styles.ArrowDown} src={arrowDown} alt="" />
-            </a> */}
+            </div>
             {showPopup && (
                 <Popup
                     message={emailError}
