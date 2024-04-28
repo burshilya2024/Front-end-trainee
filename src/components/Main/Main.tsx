@@ -43,7 +43,7 @@ const Main = () => {
         <div className={styles.container}>
             <h1 className={styles.title}>UNDER {isMobile ? <br /> : null} CONSCTURCION</h1>
             <br />
-            <p className={styles.text}>We're making lots of improvements <br /> and will be back soon</p>
+            <p className={styles.text}>We are making lots of improvements <br /> and will be back soon</p>
             <div className={styles.timeWrapper}>
                 {days === 0 && hours === 0 && minutes === 0 && seconds === 0 ? (
                     <p>event is over!</p>
