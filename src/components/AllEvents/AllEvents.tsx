@@ -6,6 +6,7 @@ import image1 from 'public/anchor.webp'
 import image2 from 'public/boat.webp'
 import image3 from 'public/fishing.webp'
 import image4 from 'public/lighthouse.webp'
+import gavai from 'public/gavai.jpg'
 
 export type FAQItem = {
     title: string;
@@ -17,22 +18,42 @@ const AllEvents = () => {
     const lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
     const faqData: FAQItem[] = [
         {
-            title: "meeting 1",
+            title: "Hawaiian party",
             body: "Eius accusamus cumque officiis, tempora ipsa a.",
-            img: image1,
+            img: gavai,
         },
         {
-            title: "meeting 2",
+            title: "Мafia party",
             body: "Eius accusamus cumque officiis, tempora. Lorem ipsum dolor sit amet edo bere",
             img: image2,
         },
         {
-            title: "meeting 3",
+            title: "Party",
             body: "Illum, vero natus rerum accusamus molestiae blanditiis dignissimos architecto eius corporis pariatur, quod sint perferendis praesentium eveniet debitis iure. Inventore, voluptatum temporibus.",
             img: image3,
         },
         {
-            title: "meeting 4",
+            title: "Party on the beach",
+            body: "Illum, vero natus rerum accusamus molestiae blanditiis dignissimos architecto eius corporis pariatur, quod sint perferendis praesentium eveniet debitis iure. Inventore, voluptatum temporibus.",
+            img: image4,
+        },
+        {
+            title: "Home Security",
+            body: "Illum, vero natus rerum accusamus molestiae blanditiis dignissimos architecto eius corporis pariatur, quod sint perferendis praesentium eveniet debitis iure. Inventore, voluptatum temporibus.",
+            img: image4,
+        },
+        {
+            title: "Network Design & Implementation",
+            body: "Illum, vero natus rerum accusamus molestiae blanditiis dignissimos architecto eius corporis pariatur, quod sint perferendis praesentium eveniet debitis iure. Inventore, voluptatum temporibus.",
+            img: image4,
+        },
+        {
+            title: "System Design & Engineering",
+            body: "Illum, vero natus rerum accusamus molestiae blanditiis dignissimos architecto eius corporis pariatur, quod sint perferendis praesentium eveniet debitis iure. Inventore, voluptatum temporibus.",
+            img: image4,
+        },
+        {
+            title: "Client Care Plans",
             body: "Illum, vero natus rerum accusamus molestiae blanditiis dignissimos architecto eius corporis pariatur, quod sint perferendis praesentium eveniet debitis iure. Inventore, voluptatum temporibus.",
             img: image4,
         },
@@ -49,7 +70,7 @@ const AllEvents = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const element = document.getElementById('otherEvents'); // Замените 'yourElementId' на ID вашего целевого элемента
+            const element = document.getElementById('otherEvents');
             if (element) {
                 const elementPosition = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight || document.documentElement.clientHeight;

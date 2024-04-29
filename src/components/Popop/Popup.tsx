@@ -15,7 +15,7 @@ export function Popup({ message, onClose }: PropsPopup) {
     return (
         <div className={styles.popup} onClick={onClose}>
             <div className={styles.popupContent} onClick={handleContentClick}>
-                <h2 style={{ color: message ? 'red' : '' }}>{message ? "FAILT!" : 'SUCCESS!'}</h2>
+                <h2 style={{ color: message ? 'red' : '' }}>{message ? "FAULT!" : 'SUCCESS!'}</h2>
 
                 <p>{message ? message : <>You have successfully subscribed to the email newsletter</>}</p>
                 <button className={styles.Close} onClick={onClose}>

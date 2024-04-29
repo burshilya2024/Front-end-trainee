@@ -1,13 +1,10 @@
 .container {
-    /* min-height: 100vh; */
-    display: flex;
-    justify-content: start;
-    align-items: center;
     font-size: 33px;
-    padding: 0% 0% 20% 0%;
+    padding: 5% 0% 10% 0%;
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 @keyframes TranSlateYanimate50 {
@@ -22,7 +19,14 @@
     }
 }
 
-.container h1 {}
+.container h1 {
+    color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.accrodionText {
+    color: gray;
+}
 
 .animatedPage {
     animation: TranSlateYanimate50 1.5s ease-in-out;

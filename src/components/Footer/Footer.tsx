@@ -7,7 +7,7 @@ import { useState } from "react";
 import { Popup } from "../Popop/Popup";
 import { z } from 'zod';
 
-const emailSchema = z.string().email('Неверный формат email').min(3, 'Поле должно быть заполнено');
+const emailSchema = z.string().email('invalid email format').min(3, 'The field must be filled in');
 
 const Footer = () => {
     const [email, setEmail] = useState('');

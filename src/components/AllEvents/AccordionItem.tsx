@@ -21,15 +21,18 @@ type AccordionItemProps = {
 export const AccordionItem = ({ id, faqItem, onClick, isOpen }: AccordionItemProps) => {
     const itemRef = useRef<HTMLDivElement>(null);
     const datee = new Date()
+
+
+    const containerStyle = {
+        backgroundImage: `url(${faqItem.img})`,
+        height: '100px',
+        width: '500px',
+        position: 'relative',
+        zIndex: 10,
+    };
     return (
         <li className={styles.accordionItem}>
-            <button className={styles.accordionHeader} onClick={() => onClick()}>
-                <p>
-                    {`0${id}`}
-                </p>
-                {faqItem.title}
-                <p> <Image alt="" src={arrowDown} className={`${styles.accordionArrow} ${isOpen ? styles.active : ""}`} /></p>
-            </button>
+
             <div
                 className={styles.accordionCollapse}
                 style={
@@ -37,19 +40,31 @@ export const AccordionItem = ({ id, faqItem, onClick, isOpen }: AccordionItemPro
                 }
             >
                 <div className={styles.accordionBodyWrapper}
-                    style={{
-                        background: 'red'
-                    }}
-                    ref={itemRef}>
-                    <div className={styles.accordionBody}>
-                        {faqItem.title}
-                        <p className={styles.accrodionText}>24.06.2024</p>
-                        <button className={styles.accrodionButtonSubscribe}>
-                            Subscribe
-                        </button>
+                    ref={itemRef}><Image className={styles.accordionImage} src={faqItem.img} alt="" />
+                    <div className={styles.accodionBlur}>
+                        <div className={styles.accordionBody}>
+                            <p className={styles.accordionTitle}>
+                                {faqItem.title}
+                            </p>
+                            <p className={styles.accrodionDate}>24.06.2024</p>
+                            <a href="https://google.com">
+                                <button className={styles.accordionMoreInformation}>
+                                    More information
+                                </button>
+                            </a>
+                        </div>
                     </div>
-                    <Image className={styles.accordionImage} src={faqItem.img} alt="" height={200} width={200} />
                 </div>
+            </div>
+            <div className={styles.backWrapper}>
+                <Image src={faqItem.img} alt="" className={styles.backWrapperImages} />
+                <button className={styles.accordionHeader} onClick={() => onClick()}>
+                    <p>
+                        {`0${id}`}
+                    </p>
+                    {faqItem.title}
+                    <p> <Image alt="" src={arrowDown} className={`${styles.accordionArrow} ${isOpen ? styles.active : ""}`} /></p>
+                </button>
             </div>
         </li>
     );
