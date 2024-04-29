@@ -1,17 +1,12 @@
 .accordion {
     list-style-type: none;
-    margin: 16px;
-    padding: 0px;
+    padding: 0px 5%;
 
+    /* @media(min-width: 767px) {
+        transform: rotate(270deg);
+
+    } */
 }
-
-.accordionItem {
-    border: 2px solid white;
-
-}
-
-
-
 
 
 .accordionCollapse {
@@ -22,7 +17,11 @@
 }
 
 .accordionCollapse.open {
-    height: auto;
+
+    @media(max-width: 767px) {
+        height: auto;
+
+    }
 }
 
 
@@ -47,15 +46,14 @@
 .accordionBodyWrapper {
     position: relative;
     height: 400px;
-    width: 500px;
-    display: grid;
-    justify-content: start;
+
 }
 
 .accordionImage {
-    width: 500px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     background-size: cover;
+    background-position: center;
 }
 
 .accodionBlur {
@@ -114,7 +112,7 @@
 .backWrapper {
     position: relative;
 
-    width: 100%;
+
 
 }
 
@@ -123,21 +121,25 @@
     left: 0;
     top: 0;
     height: 60px;
-    width: 100%;
+
 
 }
 
 .accordionHeader {
     position: relative;
     width: 100%;
-    padding: 20px 60px 20px 30px;
+    padding: 20px 0px;
     background: linear-gradient(to right, #162c4e, rgba(22, 44, 78, 0.71));
     color: white;
     border: 0;
     font-size: 22px;
-    text-align: left;
     cursor: pointer;
     display: flex;
     justify-content: start;
     gap: 20px;
+
+}
+
+.accordionHeader p {
+    padding-left: 20px;
 }

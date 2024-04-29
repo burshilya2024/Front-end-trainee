@@ -20,16 +20,7 @@ type AccordionItemProps = {
 
 export const AccordionItem = ({ id, faqItem, onClick, isOpen }: AccordionItemProps) => {
     const itemRef = useRef<HTMLDivElement>(null);
-    const datee = new Date()
 
-
-    const containerStyle = {
-        backgroundImage: `url(${faqItem.img})`,
-        height: '100px',
-        width: '500px',
-        position: 'relative',
-        zIndex: 10,
-    };
     return (
         <li className={styles.accordionItem}>
 
